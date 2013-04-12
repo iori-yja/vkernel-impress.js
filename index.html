@@ -259,28 +259,82 @@
 	ただし目的はカーネルのデバッグが主眼
     </div>
 
-    <div id="run" class="step run" data-x="0" data-y="0" data-z="6800" data-scale="4">
+    <div id="run" class="step run" data-x="0" data-y="0" data-z="6800">
 	とりあえず動かしてみよう!!c(･ω･*c三三
     </div>
-    <div id="run1" class="step run" data-x="100000" data-y="200" data-z="6800" data-scale="4">
+    <div id="run1" class="step run" data-x="10000" data-y="200" data-z="3800">
+	1. DragonFly BSDを手元に用意する
     </div>
-    <div id="run1" class="step run" data-x="100000" data-y="200" data-z="6800" data-scale="4">
+    <div id="run1" class="step run" data-x="10000" data-y="300" data-z="3800">
+	2. make pkg-create
     </div>
-    <div id="run1" class="step run" data-x="100000" data-y="200" data-z="6800" data-scale="4">
+    <div class="ban">
+    Before cooking
+    </div>
+    <div id="run2" class="step runt" data-x="10000" data-y="300" data-z="3800">
+	# cd /usr<br>
+	# make pkg-create
+    </div>
+    <div id="run3" class="step run" data-x="10000" data-y="300" data-z="1800">
+	2. make pkg-create←こいつがこける＞ω＜〜
+    </div>
+    <div id="run4" class="step run" data-x="10000" data-y="300" data-z="-200" >
+	DragonFlyのportsはgitで管理
+    </div>
+    <div id="run5" class="step run" data-x="10000" data-y="300" data-z="-200" >
+	pkg-create: snapshotごとのbranch切りcheckout
+    </div>
+    <div id="run5" class="step run" data-x="10000" data-y="300" data-z="-200" >
+	そこでしかもgit gc --agressive
+    </div>
+    <div id="run6" class="step runb" data-x="10000" data-y="800" data-z="200" >
+	そこでしかもgit gc --agressive→爆発
+	<br>
+	<br>
+	<br>
+	(error: failed to run repack13842/385537)<br> ((めっちゃつらい))
+    </div>
+    <div id="run7" class="step runb" data-x="10000" data-y="800" data-z="3800">
+    <br>
+	そんなときは、手動でcheckoutして、git gcはしないという方針で切り抜けよう
+    <br>
+    <br>(make pkg-createとはなんだったのか)
     </div>
 
-    <!--
-        
-        And now it gets really exciting! We move into third dimension!
-        
-        Along with `data-x` and `data-y`, you can define the position on third (Z) axis, with
-        `data-z`. In the example below we use `data-z="-3000"` meaning that element should be
-        positioned far away from us (by 3000px).
-        
-    -->
-    <div id="tiny" class="step" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-        <p>and <b>tiny</b> ideas</p>
+    <div class="bulban">
+    GET the source
     </div>
+    <div id="build" class="step run" data-x="2800" data-y="2300" data-z="200" data-rotate="120" data-scale="2">
+	<strong> ゲストを作る </strong>
+    </div>
+    <div id="build1" class="step runt" data-x="2800" data-y="2300" data-z="200" data-rotate="120" data-scale="2">
+	# cd /usr<br>
+	# make src-create
+    </div>
+    <div id="build2" class="step run" data-x="2800" data-y="2900" data-z="0" data-rotate="300" data-scale="2">
+	pkgsrcと同じ現象
+    </div>
+    <div id="build3" class="step runt" data-x="2800" data-y="3500" data-z="0" data-rotate="300" data-scale="2">
+	branchはあるのでエラーは無視！
+	<br>
+	git checkoutしよう
+    </div>
+    <div id="build4" class="step runb" data-x="800" data-y="3500" data-z="1200" data-rotate="60" data-scale="2">
+    <a href="http://leaf.dragonflybsd.org/~justin/handbook/updating-makeworld.html"> 21.4 Updating the System </a>
+    を見る。
+    <br>
+    まず make buildworld
+    <br>
+    そしてmake buildkernel KERNCONF=GENERIC
+    <div id="build5" class="step runb" data-x="800" data-y="3500" data-z="0" data-rotate="60" data-scale="2">
+	
+    <div id="build6" class="step runt" data-x="800" data-y="3500" data-z="1200" data-rotate="60" data-scale="2">
+    <a href="http://www.dragonflybsd.org/docs/newhandbook/ConfigureKernel/">Configuring the DragonFly Kernel</a>
+    を見ると、
+	<br>
+    
+    </div>
+    
 
     <!--
         

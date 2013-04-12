@@ -303,6 +303,42 @@ a:focus {
     line-height: 36px;
     letter-spacing: -1px;
 }
+.runt {
+    display: block;
+
+    width: 800px;
+    height: 100px;
+    padding: 16px 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'MigMix 2p', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+.runb {
+    display: block;
+
+    width: 800px;
+    height: 300px;
+    padding: 40px 60px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'MigMix 2p', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
 /*
     And now we start to style each step separately.
 
@@ -649,6 +685,50 @@ div.val {
 
     I know, it sounds complicated ... maybe it would be easier with the code?
 */
+.ban {
+    position: fixed;
+    left: 9800px;
+    bottom: 0px;
+    font-size: 300px;
+    -webkit-transform: translateY(500px);
+    -moz-transform:    translateY(500px);
+    -ms-transform:     translateY(500px);
+    -o-transform:      translateY(500px);
+    transform:         translateY(500px);
+    -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
+    -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
+    -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
+    -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
+    transition:         opacity 1s,         transform 0.5s 1s;
+
+    font-family: 'MigMix 2M', sans-serif;
+    width: 800px;
+    height: 100px;
+
+    z-index: -300;
+}
+.bulban {
+    position: fixed;
+    left: 2300px;
+    top: 1700px;
+    bottom: 10px;
+    font-size: 300px;
+    -webkit-transform: translateY(500px);
+    -moz-transform:    translatey(500px);
+    -ms-transform:     translatey(500px);
+    -o-transform:      translatey(500px);
+    transform:         translatey(500px);
+    -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
+    -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
+    -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
+    -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
+    transition:         opacity 1s,         transform 0.5s 1s;
+
+    font-family: 'MigMix 2M', sans-serif;
+    width: 800px;
+    height: 100px;
+
+}
 
 .hint {
     /*
@@ -661,8 +741,8 @@ div.val {
         ... and give it some fixed position and nice styles.
     */
     position: fixed;
-    left: 0;
-    right: 0;
+    left: 10000;
+    right: 800;
     bottom: 200px;
 
     background: rgba(0,0,0,0.5);
@@ -713,7 +793,7 @@ div.val {
 /*
     ... and we will show it when the first step (with id 'bored') is active.
 */
-.impress-on-intro .hint {
+.impress-on-run1 .hint {
     /*
         We remove the transparency and position the hint in its default fixed
         position.
