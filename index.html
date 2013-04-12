@@ -285,20 +285,24 @@
 	pkg-create: snapshotごとのbranch切りcheckout
     </div>
     <div id="run5" class="step run" data-x="10000" data-y="300" data-z="-200" >
-	そこでしかもgit gc --agressive
+	仕上げのgit gc --agressive
     </div>
     <div id="run6" class="step runb" data-x="10000" data-y="800" data-z="200" >
-	そこでしかもgit gc --agressive→爆発
+	そこでしかも<cod>git gc --agressive</cod><br>
+	↓
+	<br>
+	爆発
 	<br>
 	<br>
 	<br>
-	(error: failed to run repack13842/385537)<br> ((めっちゃつらい))
+	<cod>
+	(error: failed to run repack13842/385537)</cod><br><br><center> ((めっちゃつらい))</center>
     </div>
     <div id="run7" class="step runb" data-x="10000" data-y="800" data-z="3800">
     <br>
-	そんなときは、手動でcheckoutして、git gcはしないという方針で切り抜けよう
+	そんなときは、手動でcheckoutして、<br><br>git gcはしないという方針で切り抜けよう
     <br>
-    <br>(make pkg-createとはなんだったのか)
+    <br><cod>(make pkg-createとはなんだったのか)</cod>
     </div>
 
     <div class="bulban">
@@ -319,59 +323,66 @@
 	<br>
 	git checkoutしよう
     </div>
-    <div id="build4" class="step runb" data-x="800" data-y="3500" data-z="1200" data-rotate="60" data-scale="2">
+    <div id="build4" class="step runb" data-x="800" data-y="3500" data-z="1800" data-rotate="60" >
     <a href="http://leaf.dragonflybsd.org/~justin/handbook/updating-makeworld.html"> 21.4 Updating the System </a>
     を見る。
     <br>
     まず make buildworld
     <br>
+    <br>
     そしてmake buildkernel KERNCONF=GENERIC
-    <div id="build5" class="step runb" data-x="800" data-y="3500" data-z="0" data-rotate="60" data-scale="2">
-	
-    <div id="build6" class="step runt" data-x="800" data-y="3500" data-z="1200" data-rotate="60" data-scale="2">
-    <a href="http://www.dragonflybsd.org/docs/newhandbook/ConfigureKernel/">Configuring the DragonFly Kernel</a>
-    を見ると、
-	<br>
-    
+    <br>
+    すればよいらしい。
+    </div>
+    <div id="build5" class="step runb" data-x="800" data-y="3500" data-z="0" data-rotate="60">
+    そして知らないエラー<br>
+    <cod>-mpreferred-stack-boundary=2 is not between 4 and 12</cod>
+    に出くわす。→<cod>ls sys/config</cod>すると、
+    <br>
+    <br>
+    <cod>GENERIC LINT LINT64 SOEKRIS VKERNEL VKERNEL64 X86_64_GENERIC</cod>
+    <br>
+    などがお目見え
     </div>
     
-
-    <!--
-        
-        This step here doesn't introduce anything new when it comes to data attributes, but you
-        should notice in the demo that some words of this text are being animated.
-        It's a very basic CSS transition that is applied to the elements when this step element is
-        reached.
-        
-        At the very beginning of the presentation all step elements are given the class of `future`.
-        It means that they haven't been visited yet.
-        
-        When the presentation moves to given step `future` is changed to `present` class name.
-        That's how animation on this step works - text moves when the step has `present` class.
-        
-        Finally when the step is left the `present` class is removed from the element and `past`
-        class is added.
-        
-        So basically every step element has one of three classes: `future`, `present` and `past`.
-        Only one current step has the `present` class.
-        
-    -->
-    <div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
-        <p>by <b class="positioning">positioning</b>, <b class="rotating">rotating</b> and <b class="scaling">scaling</b> them on an infinite canvas</p>
+    <div id="build6" class="step run" data-x="1000" data-y="3500" data-z="1200" data-rotate="180" >
+    あ、察し……
     </div>
-
-    <div id="imagination" class="step" data-x="6700" data-y="-300" data-scale="6">
-        <p>the only <b>limit</b> is your <b class="imagination">imagination</b></p>
+    <div id="build7" class="step runt" data-x="1000" data-y="3500" data-rotate="90" >
+    ホストがAMD64の場合は、
+    <br>
+    buildkernel KERNCONF=X86_64_GENERIC
+    <br>
     </div>
+    
+    <div id="build8" class="step runb" data-x="1400" data-y="1500" data-z="1200" data-rotate="180" >
+    <cod>
+ mkdir /home/var.vkernel<br>
+ ln -s /home/var.vkernel /var/vkernel<br>
 
-    <div id="source" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <p>want to know more?</p>
-        <q><a href="http://github.com/bartaz/impress.js">use the source</a>, Luke!</q>
-    </div>
+ dd if=/dev/zero of=/var/vkernel/rootimg.01 bs=1m count=2048<br>
+ vnconfig -c vn0 /var/vkernel/rootimg.01<br>
+ disklabel -r -w vn0s0 auto<br>
+ disklabel -e vn0s0<br>
+ newfs /dev/vn0s0a<br>
 
-    <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
-        <p>one more thing...</p>
-    </div>
+ </cod>
+ </div>
+ <div id="build9" class="step runb" data-x="1400" data-y="1500" data-rotate="180" >
+ <cod>
+ mount /dev/vn0s0a /mnt<br>
+ cd /usr/src<br>
+ make installworld DESTDIR=/mnt<br>
+ cd etc<br>
+ make distribution DESTDIR=/mnt<br>
+
+ echo '/dev/vkd0s0a      /       ufs     rw      1  1' >/mnt/etc/fstab
+ echo 'proc              /proc   procfs  rw      0  0' >>/mnt/etc/fstab
+ 
+ umount /mnt
+ vnconfig -u vn0
+</cod>
+</div>
 
     <!--
         
@@ -385,9 +396,11 @@
         as `data-rotate` (these two are basically aliases).
         
     -->
-    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
-        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it's</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
-        <span class="footnote">* beat that, prezi ;)</span>
+    <div id="demo" class="step big" data-x="620" data-y="3000" data-z="1000" data-rotate-x="-100" data-rotate-y="10">
+    <b>DEMO time</b>
+    </div>
+    <div id="go" class="step" data-x="1620" data-y="1000" data-z="60" data-rotate-x="120" data-rotate-y="10">
+    
     </div>
 
     <!--
@@ -405,7 +418,7 @@
         CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
         
     -->
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    <div id="overview" class="step" data-x="1000" data-y="1500" data-rotate="120" data-scale="8">
     </div>
 
 </div>
@@ -434,12 +447,6 @@
     Just sayin' ;)
     
 -->
-<script>
-if ("ontouchstart" in document.documentElement) { 
-    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-}
-</script>
-
 <!--
     
     Last, but not least.
