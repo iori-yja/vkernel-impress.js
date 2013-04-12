@@ -308,17 +308,17 @@
     <div class="bulban">
     GET the source
     </div>
-    <div id="build" class="step run" data-x="2800" data-y="2300" data-z="200" data-rotate="120" data-scale="2">
+    <div id="build" class="step run" data-x="2800" data-y="2300" data-z="200" data-rotate="300" data-scale="2">
 	<strong> ゲストを作る </strong>
     </div>
     <div id="build1" class="step runt" data-x="2800" data-y="2300" data-z="200" data-rotate="120" data-scale="2">
 	# cd /usr<br>
 	# make src-create
     </div>
-    <div id="build2" class="step run" data-x="2800" data-y="2900" data-z="0" data-rotate="300" data-scale="2">
+    <div id="build2" class="step run" data-x="2500" data-y="1800" data-z="0" data-rotate="120" data-scale="2">
 	pkgsrcと同じ現象
     </div>
-    <div id="build3" class="step runt" data-x="2800" data-y="3500" data-z="0" data-rotate="300" data-scale="2">
+    <div id="build3" class="step runt" data-x="1800" data-y="3000" data-z="0" data-rotate="120" data-scale="2">
 	branchはあるのでエラーは無視！
 	<br>
 	git checkoutしよう
@@ -345,7 +345,7 @@
     などがお目見え
     </div>
     
-    <div id="build6" class="step run" data-x="1000" data-y="3500" data-z="1200" data-rotate="180" >
+    <div id="build6" class="step run" data-x="1000" data-y="3500" data-z="0" data-rotate="180" >
     あ、察し……
     </div>
     <div id="build7" class="step runt" data-x="1000" data-y="3500" data-rotate="90" >
@@ -383,6 +383,19 @@
  vnconfig -u vn0
 </cod>
 </div>
+ <div id="build10" class="step big" data-x="1800" data-y="1000" data-rotate="180" >
+  ホストのvkernel対応kernelをビルド。
+ <br>
+    buildkernel KERNCONF=VKERNEL64
+</div>
+ <div id="build11" class="step big" data-x="2200" data-y="600" data-rotate="180" >
+ sysctlを叩いて、vkernelが使えるようにする
+ sysctl vm.vkernel_enable=1
+</div>
+ <div id="ready" class="step big" data-x="3000" data-y="450" data-rotate="180" >
+ <b>OK! Ready!</b>
+</div>
+
 
     <!--
         
@@ -399,8 +412,9 @@
     <div id="demo" class="step big" data-x="620" data-y="3000" data-z="1000" data-rotate-x="-100" data-rotate-y="10">
     <b>DEMO time</b>
     </div>
-    <div id="go" class="step" data-x="1620" data-y="1000" data-z="60" data-rotate-x="120" data-rotate-y="10">
     
+    <div id="go" class="step big" data-x="3620" data-y="200" data-z="2000" data-rotate-x="120" data-rotate-y="-120">
+    <b>debuging?</b>
     </div>
 
     <!--
@@ -418,7 +432,8 @@
         CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
         
     -->
-    <div id="overview" class="step" data-x="1000" data-y="1500" data-rotate="120" data-scale="8">
+    <div id="overview" class="step big" data-x="1000" data-y="1500" data-rotate="120" data-scale="8">
+    <img src="dragonfly.gif" width="800" height="509" >
     </div>
 
 </div>
