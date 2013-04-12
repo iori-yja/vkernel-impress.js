@@ -82,7 +82,7 @@ table {
     want to leave anybody behind.
 */
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'MigMix 2M', sans-serif;
     min-height: 740px;
 
     background: rgb(215, 215, 215);
@@ -165,8 +165,8 @@ a:focus {
 
 .step {
     position: relative;
-    width: 900px;
-    padding: 40px;
+    width: 800px;
+    padding: 100px;
     margin: 20px auto;
 
     -webkit-box-sizing: border-box;
@@ -176,7 +176,7 @@ a:focus {
     box-sizing:         border-box;
 
     font-family: 'PT Serif', georgia, serif;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 1.5;
 }
 
@@ -187,16 +187,29 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    opacity: 0.1;
 
-    -webkit-transition: opacity 1s;
-    -moz-transition:    opacity 1s;
-    -ms-transition:     opacity 1s;
-    -o-transition:      opacity 1s;
-    transition:         opacity 1s;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition:    opacity 0.3s;
+    -ms-transition:     opacity 0.3s;
+    -o-transition:      opacity 0.3s;
+    transition:         opacity 0.3s;
 }
 
 .impress-enabled .step.active { opacity: 1 }
+
+.impress-enabled .faststep {
+    margin: 0;
+    opacity: 0.1;
+
+    -webkit-transition: opacity 0.3s;
+    -moz-transition:    opacity 0.3s;
+    -ms-transition:     opacity 0.3s;
+    -o-transition:      opacity 0.3s;
+    transition:         opacity 0.3s;
+}
+
+.impress-enabled .faststep.active { opacity: 1 }
 
 /*
     These 'slide' step styles were heavily inspired by HTML5 Slides:
@@ -206,11 +219,11 @@ a:focus {
 
     They cover everything what you see on first three steps of the demo.
 */
-.slide {
+.introslide {
     display: block;
 
-    width: 900px;
-    height: 700px;
+    width: 500px;
+    height: 500px;
     padding: 40px 60px;
 
     background-color: white;
@@ -221,7 +234,40 @@ a:focus {
     color: rgb(102, 102, 102);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'MigMix 2p', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.introslide q {
+    display: block;
+    font-size: 50px;
+    line-height: 72px;
+
+    margin-top: 30px;
+}
+
+.introslide q strong {
+    white-space: nowrap;
+}
+
+.slide {
+    display: block;
+
+    width: 1200px;
+    height: 800px;
+    padding: 40px 60px;
+
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'MigMix 2p', Arial, sans-serif;
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -1px;
@@ -239,6 +285,24 @@ a:focus {
     white-space: nowrap;
 }
 
+.run {
+    display: block;
+
+    width: 800px;
+    height: 30px;
+    padding: 40px 60px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'MigMix 2p', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
 /*
     And now we start to style each step separately.
 
@@ -250,8 +314,17 @@ a:focus {
     3D positioning along Z axis.
 */
 
+div.val {
+    width: 350px;
+    vertical-align: middle;
+    font-size: 1.2em;
+}
+
+
 #title {
     padding: 0;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #title .try {
@@ -267,9 +340,16 @@ a:focus {
     transform:         translateZ(20px);
 }
 
+#title h2 {
+    font-size: 100px;
+    -webkit-transform: translateZ(50px);
+    -moz-transform:    translateZ(50px);
+    -ms-transform:     translateZ(50px);
+    -o-transform:      translateZ(50px);
+    transform:         translateZ(50px);
+}
 #title h1 {
-    font-size: 190px;
-
+    font-size: 210px;
     -webkit-transform: translateZ(50px);
     -moz-transform:    translateZ(50px);
     -ms-transform:     translateZ(50px);
@@ -633,7 +713,7 @@ a:focus {
 /*
     ... and we will show it when the first step (with id 'bored') is active.
 */
-.impress-on-bored .hint {
+.impress-on-intro .hint {
     /*
         We remove the transparency and position the hint in its default fixed
         position.
