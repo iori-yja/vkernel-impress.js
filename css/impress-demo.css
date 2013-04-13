@@ -315,9 +315,14 @@ a:focus {
     line-height: 40px;
     letter-spacing: -1px;
 }
+.big cod{
+    text-align: left;
+    font-family: 'Inconsolata', Arial, sans-serif;
+    font-size: 38px;
+    line-height: 40px;
+}
 .runb {
     display: block;
-
     width: 800px;
     height: 560px;
     padding: 40px 60px;
