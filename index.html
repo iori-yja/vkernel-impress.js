@@ -230,7 +230,7 @@
 	1. DragonFly BSDを手元に用意する
     </div>
     <div id="run1" class="step run" data-x="10000" data-y="300" data-z="3800">
-	2. make pkg-create
+	ports treeをfetch
     </div>
     <div class="ban">
     Before cooking
@@ -359,7 +359,9 @@
 </div>
  <div id="build11" class="step big" data-x="2600" data-y="1300" data-rotate="180" >
  sysctlを叩いて、vkernelが使えるようにする
+ <br><cod>
  sysctl vm.vkernel_enable=1
+ </cod>
 </div>
  <div id="ready" class="step big" data-x="3000" data-y="450" data-rotate="180" >
  <b>OK! Ready!</b>
