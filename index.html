@@ -1,48 +1,4 @@
-<!doctype html>
 
-<!--
-
-    Welcome to the light side of the source, young padawan.
-
-    One step closer to learn something interesting you are...
-
-                               ____                  
-                            _.' :  `._               
-                        .-.'`.  ;   .'`.-.           
-               __      / : ___\ ;  /___ ; \      __  
-             ,'_ ""=-.:__;".-.";: :".-.":__;.-="" _`,
-             :' `.t""=-.. '<@.`;_  ',@:` ..-=""j.' `;
-                  `:-.._J '-.-'L__ `-.-' L_..-;'     
-                    "-.__ ;  .-"  "-.  : __.-"       
-                        L ' /.======.\ ' J           
-                         "-.   "__"   .-"            
-                        __.l"-:_JL_;-";.__           
-                     .-j/'.;  ;""""  / .'\"-.        
-                   .' /:`. "-.:     .-" .';  `.      
-                .-"  / ;  "-. "-..-" .-"  :    "-.   
-             .+"-.  : :      "-.__.-"      ;-._   \  
-             ; \  `.; ;                    : : "+. ; 
-             :  ;   ; ;                    : ;  : \: 
-             ;  :   ; :                    ;:   ;  : 
-            : \  ;  :  ;                  : ;  /  :: 
-            ;  ; :   ; :                  ;   :   ;: 
-            :  :  ;  :  ;                : :  ;  : ; 
-            ;\    :   ; :                ; ;     ; ; 
-            : `."-;   :  ;              :  ;    /  ; 
-             ;    -:   ; :              ;  : .-"   : 
-             :\     \  :  ;            : \.-"      : 
-              ;`.    \  ; :            ;.'_..-=  / ; 
-              :  "-.  "-:  ;          :/."      .'  :
-               \         \ :          ;/  __        :
-                \       .-`.\        /t-""  ":-+.   :
-                 `.  .-"    `l    __/ /`. :  ; ; \  ;
-                   \   .-" .-"-.-"  .' .'j \  /   ;/ 
-                    \ / .-"   /.     .'.' ;_:'    ;  
-                     :-""-.`./-.'     /    `.___.'   
-                           \ `t  ._  /               
-                            "-.t-._:'                
-
--->
 
 <!--
     
@@ -164,14 +120,21 @@
         It will not be rotated or scaled.
         
     -->
-		<div id="introduction" class="step introslide" data-x="-1500" data-y="-1500" data-z="1500">
+		<div id="introduction" class="step introslide" data-x="1500" data-y="-1500" data-z="1500">
 			<q> <bold> 自己紹介 <bold> </q>
 			<q> 本名: 米司 伊織</q>
-			<q> 所属: 筑波大学</q>
+			<q> 生息域: 筑波</q>
     </div>
-		<div id="introduction" class="step introslide" data-x="-1500" data-y="-1500" data-z="1500">
+		<div id="introduction" class="step introslide" data-x="1500" data-y="-1500" data-z="1500">
 			<q> <h1> <bold> twitter <bold> </h1> </q>
-			<q> <div align="center"><div><img src="iorivr.png"></div><div>@iorivur </div></div></q>
+			<q> <div align="center"><div><img src="iorivr.png" width="200"></div><div>@iorivur </div></div></q>
+    </div>
+    <div id="introduction1" class="step introslide" data-x="0" data-y="-1500" data-z="1500">
+			<q> 最近のニュース: 　　　　　　　　　　</q>
+    </div>
+    <div id="introduction1" class="step introslide" data-x="0" data-y="-1500" data-z="1500">
+			<q> 最近のニュース:</q>
+			<q> <img src="ericc.png" width="200">@siritori</q>
     </div>
     <div id="introduction1" class="step introslide" data-x="0" data-y="-1500" data-z="1500">
 			<q> 最近のニュース: えりっくと同学年かも</q>
@@ -253,13 +216,13 @@
     </div>
 
     <div id="its1" class="step" data-x="0" data-y="0" data-z="-3200" data-rotate="-120" data-scale="2">
-	vkernelは, DragonFly BSDにある, カーネルをユーザランドで動かす機構
+	<strong>vkernel</strong>は, DragonFly BSDにある, カーネルをユーザランドで動かす機構
     </div>
     <div id="its2" class="step" data-x="0" data-y="0" data-z="-4000" data-rotate="-120" data-z="-1800" data-scale="2">
 	ただし目的はカーネルのデバッグが主眼
     </div>
 
-    <div id="run" class="step run" data-x="0" data-y="0" data-z="6800">
+    <div id="run" class="step run" data-x="0" data-y="0" data-z="5800">
 	とりあえず動かしてみよう!!c(･ω･*c三三
     </div>
     <div id="run1" class="step run" data-x="10000" data-y="200" data-z="3800">
@@ -288,15 +251,14 @@
 	仕上げのgit gc --agressive
     </div>
     <div id="run6" class="step runb" data-x="10000" data-y="800" data-z="200" >
-	そこでしかも<cod>git gc --agressive</cod><br>
-	↓
+	<center><cod>git gc --agressive</cod><br>↓ 
 	<br>
 	爆発
-	<br>
+	<br></center>
 	<br>
 	<br>
 	<cod>
-	(error: failed to run repack13842/385537)</cod><br><br><center> ((めっちゃつらい))</center>
+	error: failed to run repack13842/385537</cod><br><br><center> ((めっちゃつらい))</center>
     </div>
     <div id="run7" class="step runb" data-x="10000" data-y="800" data-z="3800">
     <br>
@@ -348,14 +310,14 @@
     <div id="build6" class="step run" data-x="1000" data-y="3500" data-z="0" data-rotate="180" >
     あ、察し……
     </div>
-    <div id="build7" class="step runt" data-x="1000" data-y="3500" data-rotate="90" >
+    <div id="build7" class="step runt" data-x="1000" data-y="3500" data-rotate="270" >
     ホストがAMD64の場合は、
     <br>
     buildkernel KERNCONF=X86_64_GENERIC
     <br>
     </div>
     
-    <div id="build8" class="step runb" data-x="1400" data-y="1500" data-z="1200" data-rotate="180" >
+    <div id="build8" class="step runb" data-x="-700" data-y="2200" data-z="1200" data-rotate="180" >
     <cod>
  mkdir /home/var.vkernel<br>
  ln -s /home/var.vkernel /var/vkernel<br>
@@ -368,7 +330,7 @@
 
  </cod>
  </div>
- <div id="build9" class="step runb" data-x="1400" data-y="1500" data-rotate="180" >
+ <div id="build9" class="step runb" data-x="-700" data-y="2200" data-rotate="180" >
  <cod>
  mount /dev/vn0s0a /mnt<br>
  cd /usr/src<br>
@@ -383,12 +345,12 @@
  vnconfig -u vn0
 </cod>
 </div>
- <div id="build10" class="step big" data-x="1800" data-y="1000" data-rotate="180" >
+ <div id="build10" class="step big" data-x="800" data-y="2000" data-rotate="180" >
   ホストのvkernel対応kernelをビルド。
  <br>
     buildkernel KERNCONF=VKERNEL64
 </div>
- <div id="build11" class="step big" data-x="2200" data-y="600" data-rotate="180" >
+ <div id="build11" class="step big" data-x="2600" data-y="1300" data-rotate="180" >
  sysctlを叩いて、vkernelが使えるようにする
  sysctl vm.vkernel_enable=1
 </div>
@@ -409,12 +371,28 @@
         as `data-rotate` (these two are basically aliases).
         
     -->
-    <div id="demo" class="step big" data-x="620" data-y="3000" data-z="1000" data-rotate-x="-100" data-rotate-y="10">
+    <div id="demo1" class="step big" data-x="620" data-y="3000" data-z="1000" data-rotate-x="-100" data-rotate-y="10">
     <b>DEMO time</b>
+    Run VM with vkernel!
     </div>
     
-    <div id="go" class="step big" data-x="3620" data-y="200" data-z="2000" data-rotate-x="120" data-rotate-y="-120">
+    <div id="demo2" class="step big" data-x="3620" data-y="200" data-z="2000" data-rotate="90">
     <b>debuging?</b>
+    debug kernel with gdb!
+    </div>
+    <div id="demo3" class="step big" data-x="20" data-y="4000" data-z="1000" data-rotate-x="-100" data-rotate-y="10">
+    <b>DEMO time</b>
+    Can't run other BSD kernel?
+    </div>
+    <div id="demo4" class="step big" data-x="-20" data-y="100" data-z="1000" data-rotate-x="-200" data-rotate-y="10">
+    <b>Future debug</b>
+    I wish advanced debugger "Valgrind" is in DragonFly BSD...
+    </div>
+    <div id="demo5" class="step big" data-x="-20" data-y="100" data-z="1000" data-rotate-x="-20" data-rotate-y="10">
+    <b>Future debug</b>
+    I wish advanced debugger "Valgrind" is in DragonFly BSD...
+    <br>
+    somebody plz
     </div>
 
     <!--
@@ -504,52 +482,3 @@
     is used in event handlers.
     
 -->
-
-</body>
-</html>
-
-<!--
-    
-    Now you know more or less everything you need to build your first impress.js presentation, but before
-    you start...
-    
-    Oh, you've already cloned the code from GitHub?
-    
-    You have it open in text editor?
-    
-    Stop right there!
-    
-    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
-    first needs to grow in your mind.
-    
-    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
-    
-    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
-    to present. It will get you closer and closer to the layout you'll build later with impress.js.
-    
-    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
-    it earlier, because you'll only waste your time fighting with positioning of useless points.
-    
-    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
-    creating awesome and engaging presentations.
-    
-    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
-    
--->
-
-<!--
-    
-    Are you still reading this?
-    
-    For real?
-    
-    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
-    to congratulate you personally :)
-    
-    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
-    or anything you like to drink. And raise a glass for me ;)
-    
-    Cheers!
-    
--->
-
